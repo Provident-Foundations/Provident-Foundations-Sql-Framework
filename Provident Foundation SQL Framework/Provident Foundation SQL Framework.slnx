@@ -1,0 +1,15 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+  </Configurations>
+  <Project Path="../../../../test/Provident.Foundations.Tests/Provident.Foundations.Tests.csproj">
+    <Platform Solution="*|x64" Project="x64" />
+  </Project>
+  <Project Path="../../../Core/Provident Foundations Framework/Provident.Foundations/Provident.Foundations.csproj">
+    <Platform Solution="*|x64" Project="x64" />
+  </Project>
+  <Project Path="Provident Foundation SQL Framework.csproj">
+    <Platform Solution="*|x64" Project="x64" />
+  </Project>
+</Solution>

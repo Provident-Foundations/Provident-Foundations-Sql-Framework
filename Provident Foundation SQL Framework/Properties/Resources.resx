@@ -1,0 +1,382 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="DaClassConstructorXmlRemarksTemplate" xml:space="preserve">
+    <value>Initializes the class with an externally provided SQL provider instance for data access operations.</value>
+    <comment>XML Remarks Comment for single parameter constructor.</comment>
+  </data>
+  <data name="DaClassConstructorXmlSummaryTemplate" xml:space="preserve">
+    <value>Initializes a new instance of the &lt;see cref=\"{0}\"/&gt; class.</value>
+    <comment>XML Summary Comment for single parameter constructor.</comment>
+  </data>
+  <data name="DaClassParamLessConstructorXmlRemarksTemplate" xml:space="preserve">
+    <value>This is the default constructor.</value>
+    <comment>XML Remarks Comment for parameter-less constructor.</comment>
+  </data>
+  <data name="DaClassParamLessConstructorXmlSummaryTemplate" xml:space="preserve">
+    <value>Initializes a new instance of the &lt;see cref=\"{0}\"/&gt; class.</value>
+    <comment>XML Summary Comment for parameter-less constructor.</comment>
+  </data>
+  <data name="DaClassProviderVariableName" xml:space="preserve">
+    <value>provider</value>
+    <comment>The name of the parameter for the constructor.</comment>
+  </data>
+  <data name="DaClassProviderVariableParamSummary" xml:space="preserve">
+    <value>A reference to the &lt;see cref=\"{0}"/&gt; instance to use instead of locally creating one.</value>
+    <comment>The XML parameter comment template for the parameter for the constructor.</comment>
+  </data>
+  <data name="DaClassProviderVariableTypeName" xml:space="preserve">
+    <value>SqlProvider</value>
+    <comment>The name of the data type for the parameter for the constructor.</comment>
+  </data>
+  <data name="DataAccessSpDeleteXmlSummary" xml:space="preserve">
+    <value>The stored procedure to delete a record.</value>
+    <comment>XML Comment for the constant defining the "Delete" stored procedure name constant.</comment>
+  </data>
+  <data name="DataAccessSpGetAllXmlSummary" xml:space="preserve">
+    <value>The stored procedure to retrieve all the records in the table.</value>
+    <comment>XML Comment for the constant defining the "Get All" stored procedure name constant.</comment>
+  </data>
+  <data name="DataAccessSpGetByIdXmlSummary" xml:space="preserve">
+    <value>The stored procedure to retrieve a single record by ID value.</value>
+    <comment>XML Comment for the constant defining the "Get By Id" stored procedure name constant.</comment>
+  </data>
+  <data name="DataAccessSpInsertXmlSummary" xml:space="preserve">
+    <value>The stored procedure to insert a record.</value>
+    <comment>XML Comment for the constant defining the "Insert" stored procedure name constant.</comment>
+  </data>
+  <data name="DataAccessSpSummaryPrefixForParameter" xml:space="preserve">
+    <value>The @{0} parameter for a stored procedure.</value>
+    <comment>XML Comment for the constants defining the prefix for the Sql Parameter names.</comment>
+  </data>
+  <data name="DataAccessSpUpdateXmlSummary" xml:space="preserve">
+    <value>The stored procedure to update a record.</value>
+    <comment>XML Comment for the constant defining the "Update" stored procedure name constant.</comment>
+  </data>
+  <data name="DataAccessXmlRemarks" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DataAccessXmlSummary" xml:space="preserve">
+    <value>Provides the data access methods for the records in the table.</value>
+  </data>
+  <data name="DateTimeFormat" xml:space="preserve">
+    <value>MM/dd/yyyy hh:mm:ss tt</value>
+    <comment>Date/Time Format</comment>
+  </data>
+  <data name="DefaultDataAccessBaseClassName" xml:space="preserve">
+    <value>DataAccessBase</value>
+  </data>
+  <data name="DefaultSpConstNameDelete" xml:space="preserve">
+    <value>SqlDelete</value>
+    <comment>The default constant name for the "Delete" stored procedure name definition.</comment>
+  </data>
+  <data name="DefaultSpConstNameGetAll" xml:space="preserve">
+    <value>SqlGetAll</value>
+    <comment>The default constant name for the "Get All" stored procedure name definition.</comment>
+  </data>
+  <data name="DefaultSpConstNameGetById" xml:space="preserve">
+    <value>SqlGetById</value>
+    <comment>The default constant name for the "Get By Id" stored procedure name definition.</comment>
+  </data>
+  <data name="DefaultSpConstNameInsert" xml:space="preserve">
+    <value>SqlInsert</value>
+    <comment>The default constant name for the "Insert" stored procedure name definition.</comment>
+  </data>
+  <data name="DefaultSpConstNameSqlParamPrefix" xml:space="preserve">
+    <value>SqlParam</value>
+    <comment>The default constant name prefix for the Sql Parameter constant definitions.</comment>
+  </data>
+  <data name="DefaultSpConstNameUpdate" xml:space="preserve">
+    <value>SqlUpdate</value>
+    <comment>The default constant name for the "Update" stored procedure name definition.</comment>
+  </data>
+  <data name="StatusCollecting" xml:space="preserve">
+    <value>Collecting Fragmentation Statistics</value>
+  </data>
+  <data name="StatusConnected" xml:space="preserve">
+    <value>Connected.</value>
+  </data>
+  <data name="StatusInitializing" xml:space="preserve">
+    <value>Initializing...</value>
+  </data>
+  <data name="StatusPerformSmartRebuild" xml:space="preserve">
+    <value>Performing Smart Index Rebuild</value>
+  </data>
+  <data name="StatusSetForRecompile" xml:space="preserve">
+    <value>Setting For Recompile...</value>
+  </data>
+  <data name="StatusUpdatingStats" xml:space="preserve">
+    <value>Updating Statistics On Tables</value>
+  </data>
+  <data name="SubStatusBeginRebuildExec" xml:space="preserve">
+    <value>Beginning Rebuild Execution...</value>
+  </data>
+  <data name="SubStatusCreatingStatements" xml:space="preserve">
+    <value>Creating SQL Statements...</value>
+  </data>
+  <data name="SubStatusPass" xml:space="preserve">
+    <value>Executing Smart Rebuild: Pass:</value>
+  </data>
+  <data name="SubStatusReadingSchema" xml:space="preserve">
+    <value>Reading Schema Content....</value>
+  </data>
+  <data name="SubStatusStartOps" xml:space="preserve">
+    <value>Starting Operations</value>
+  </data>
+  <data name="SubStatusTestingConnection" xml:space="preserve">
+    <value>Testing Connection...</value>
+  </data>
+  <data name="TSqlBasicSchemaQuery" xml:space="preserve">
+    <value>SELECT 
+	DB_ID()          [DatabaseId], 
+	DB_NAME(DB_ID()) [DatabaseName]
+
+SELECT 
+	SCHEMA_NAME([tables].[schema_id]),
+	[tables].[name],
+	[tables].[object_id] 
+FROM
+	[sys].[tables] 
+WHERE 
+   [tables].[type] = 'U' OR
+   [tables].[type] = 'IT'
+
+ORDER BY 
+    [tables].[name] 
+ 
+SELECT 
+   [indexes].[object_id], 
+   [indexes].[index_id], 
+   [indexes].[type], 
+   [indexes].[name], 
+   [indexes].[is_primary_key] 
+FROM 
+   [sys].[indexes] 
+       INNER JOIN[sys].[tables] 
+           ON [indexes].[object_id] = [tables].[object_id] 
+WHERE 
+           ([tables].[type] = 'U' OR[tables].[type] = 'IT')
+    AND    [indexes].[type] &gt; 0 
+ORDER BY 
+	[indexes].[object_id],
+	[indexes].[index_id]</value>
+    <comment>Basic query for loading table and index schema information.</comment>
+  </data>
+  <data name="TSqlGetAllDbNamesQuery" xml:space="preserve">
+    <value>SELECT 
+	[sys].[databases].[name]
+
+FROM 
+	[sys].[databases]
+
+ORDER BY [sys].[databases].[name]</value>
+  </data>
+  <data name="TSqlGetDataTypesQuery" xml:space="preserve">
+    <value>SELECT 
+	[Types].[name]              typeName,
+	[Types].[system_type_id]    typeId,
+	[Types].[max_length]        [maxLength],
+	[Types].[precision]         [precision],
+	[Types].[scale]             [scale],
+	[Types].[is_nullable]       isNullable 
+FROM
+	[sys].[types] [Types] 
+WHERE 
+   [Types].[is_user_defined] = 0 
+ORDER BY 
+    [Types].[system_type_id]</value>
+    <comment>Query to read the list of system data types.</comment>
+  </data>
+  <data name="TSqlGetDbNamesQuery" xml:space="preserve">
+    <value>SELECT 
+	[sys].[databases].[name]
+
+FROM 
+	[sys].[databases]
+
+WHERE
+	[sys].[databases].[owner_sid] != 1
+	AND LEN([sys].[databases].[owner_sid]) &gt; 1
+
+ORDER BY [name]</value>
+    <comment>Query to retrieve user database names.</comment>
+  </data>
+  <data name="TSqlGetTableColumnsQuery" xml:space="preserve">
+    <value>SELECT  
+	[TableColumns].[object_id]			TableObjectId, 
+	SCHEMA_NAME([Tables].[schema_id])	SchemaName,
+	[Tables].[name]						TableName,  
+	[TableColumns].[column_id]			ColumnId,
+	[TableColumns].[name]				ColumnName,
+	[TableColumns].[user_type_id]		TypeId, 
+	[TableColumns].[max_length]			[MaxLength], 
+	[TableColumns].[precision]			[Precision], 
+	[TableColumns].[scale]				[Scale],
+	[TableColumns].[is_nullable]		IsNullable, 
+	[TableColumns].[is_identity]		IsIdentity, 
+	[TableColumns].[is_computed]		IsComputed, 
+	[TableColumns].[is_ansi_padded]		IsPadded 
+FROM 
+	[sys].[columns] [TableColumns] 
+		INNER JOIN sys.tables [Tables]
+			ON	[TableColumns].[object_id] = [Tables].[object_id] 
+			AND [Tables].[type] = 'U' 
+			AND [Tables].[is_ms_shipped] = 0 
+ORDER BY 
+	[Tables].[name],
+	[TableColumns].[column_Id]</value>
+    <comment>Basic query to get the list of columns for a table.</comment>
+  </data>
+  <data name="TSqlIndexFragmentationQuery" xml:space="preserve">
+    <value>SELECT 
+   [database_id]		[DatabaseId], 
+   [object_id]			[ObjectId], 
+   [index_id]			[IndexId], 
+   [avg_fragmentation_in_percent]	[AvgFragmentationInPercent], 
+   [fragment_count]		[FragmentCount], 
+   [page_count]			[PageCount] 
+FROM
+   sys.dm_db_index_physical_stats(DB_ID(), @ObjectId, NULL, NULL, 'DETAILED') 
+ORDER BY
+	[database_id],
+    [object_id],
+	[index_id]</value>
+    <comment>Basic query for reading table index fragmentation statistics.</comment>
+  </data>
+  <data name="TSqlRecompileQuery" xml:space="preserve">
+    <value>exec sp_recompile {0}</value>
+    <comment>Statement to update statistics on a table.</comment>
+  </data>
+  <data name="TSqlUpdateStatisticsQuery" xml:space="preserve">
+    <value>UPDATE STATISTICS {0}</value>
+    <comment>Query to update statistics on a table.</comment>
+  </data>
+  <data name="UsingSystemCollectionsGeneric" xml:space="preserve">
+    <value>System.Collections.Generic</value>
+    <comment>Namespace</comment>
+  </data>
+  <data name="UsingSystemDataClient" xml:space="preserve">
+    <value>System.Data.SqlClient</value>
+    <comment>Namespace</comment>
+  </data>
+  <data name="UsingSystemThreadingTasks" xml:space="preserve">
+    <value>System.Threading.Tasks</value>
+    <comment>Namespace</comment>
+  </data>
+</root>
