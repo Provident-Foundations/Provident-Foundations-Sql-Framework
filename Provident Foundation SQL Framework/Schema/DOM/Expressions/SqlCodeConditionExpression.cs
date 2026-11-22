@@ -143,7 +143,12 @@ public sealed class SqlCodeConditionExpression : SqlCodeExpression
     /// </returns>
     public override SqlCodeConditionExpression Clone()
     {
-        return new SqlCodeConditionExpression(_leftExpression, _rightExpression, _operator);
+        return new SqlCodeConditionExpression
+        {
+            _leftExpression = _leftExpression?.Clone(),
+            _rightExpression = _rightExpression?.Clone(),
+            _operator = _operator
+        };
     }
     #endregion
 

@@ -121,7 +121,7 @@ namespace Provident.Foundations.Sql.Schema.DOM.Clauses
         /// </returns>
         public SqlCodeFromClause Clone()
         {
-            SqlCodeFromClause clause = new SqlCodeFromClause(_table);
+            SqlCodeFromClause clause = new SqlCodeFromClause(_table?.Clone()) { NoLock = NoLock };
             if (_joins != null)
             {
                 if (clause.Joins != null)

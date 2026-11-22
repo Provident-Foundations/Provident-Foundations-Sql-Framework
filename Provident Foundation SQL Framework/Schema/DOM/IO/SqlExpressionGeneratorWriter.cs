@@ -298,17 +298,20 @@ namespace Provident.Foundations.Sql.Schema.DOM.IO
         /// <param name="expression">
         /// The <see cref="SqlCodeConditionListExpression"/> instance to be rendered.
         /// </param>
-        public async Task WriteConditionListExpressionAsync(SqlCodeConditionListExpression? expression)
+        /// <param name="useParens">Whether to wrap the condition in parentheses.</param>
+        public async Task WriteConditionListExpressionAsync(SqlCodeConditionListExpression? expression, bool useParens = true)
         {
             if (CanWrite && expression != null && expression.Expression != null)
             {
-                await SafeWriteAsync(OpenParenthesis).ConfigureAwait(false);
+                if (useParens)
+                    await SafeWriteAsync(OpenParenthesis).ConfigureAwait(false);
                 await WriteConditionExpressionAsync(expression.Expression).ConfigureAwait(false);
-                await SafeWriteAsync(CloseParenthesis).ConfigureAwait(false);
+                if (useParens)
+                    await SafeWriteAsync(CloseParenthesis).ConfigureAwait(false);
 
                 if (expression.Operator != SqlConditionOperator.NotSpecified)
                 {
-                    await SafeWriteAsync(RenderSqlConditionOperator(expression.Operator))
+                    await SafeWriteAsync(CharacterConstants.Space + RenderSqlConditionOperator(expression.Operator))
                         .ConfigureAwait(false);
                 }
             }

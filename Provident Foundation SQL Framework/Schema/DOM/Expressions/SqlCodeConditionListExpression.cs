@@ -118,7 +118,11 @@ namespace Provident.Foundations.Sql.Schema.DOM.Expressions
         /// </returns>
         public override SqlCodeConditionListExpression Clone()
         {
-            return new SqlCodeConditionListExpression(_expression, _operator);
+            return new SqlCodeConditionListExpression
+            {
+                _expression = _expression?.Clone(),
+                _operator = _operator
+            };
         }
         #endregion
     }

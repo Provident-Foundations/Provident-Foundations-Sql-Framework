@@ -140,7 +140,15 @@ namespace Provident.Foundations.Sql.Schema.DOM.Clauses
         /// </returns>
         public SqlCodeSelectClause Clone()
         {
-            return new SqlCodeSelectClause(_distinct, _topValue);
+            SqlCodeSelectClause clone = new(_distinct, _topValue);
+            if (_selectItemsList != null)
+            {
+                foreach (SqlCodeSelectListItemExpression item in _selectItemsList)
+                {
+                    clone.SelectItemsList.Add(item.Clone());
+                }
+            }
+            return clone;
         }
         #endregion
 

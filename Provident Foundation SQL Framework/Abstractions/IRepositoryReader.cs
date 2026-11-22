@@ -74,6 +74,27 @@ public interface IRepositoryReader
     /// </returns>
     char GetChar(int index);
     /// <summary>
+    /// Gets the value of the specified column as a date only value.
+    /// </summary>
+    /// <param name="index">
+    /// The zero-based column ordinal value.
+    /// </param>
+    /// <returns>
+    /// The value of the column as a <see cref="DateOnly"/>, or <see cref="DateOnly.MinValue"/> if the
+    /// operation fails.
+    /// </returns>
+    DateOnly GetDateOnly(int index);
+    /// <summary>
+    /// Gets the value of the specified column as a date only value.
+    /// </summary>
+    /// <param name="index">
+    /// The zero-based column ordinal value.
+    /// </param>
+    /// <returns>
+    /// The value of the column as a nullable <see cref="DateOnly"/>, or <b>null</b>.
+    /// </returns>
+    DateOnly? GetDateOnlyNullable(int index);
+    /// <summary>
     /// Gets the value of the specified column as a Date/Time.
     /// </summary>
     /// <param name="index">

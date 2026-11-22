@@ -28,7 +28,7 @@ public abstract class DataAccessBase : ExceptionTrackingBase
     /// <summary>
     /// The thread synchronization instance.
     /// </summary>
-    private static readonly object _syncRoot = new();
+    private static readonly Lock _syncRoot = new();
     /// <summary>
     /// Keeps track of the number of queries executing at one time.
     /// </summary>

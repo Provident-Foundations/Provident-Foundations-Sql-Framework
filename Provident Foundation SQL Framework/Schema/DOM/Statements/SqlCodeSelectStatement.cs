@@ -1,12 +1,18 @@
 ﻿using Provident.Foundation.Sql.Schema.DOM.Statements;
 using Provident.Foundations.Sql.Schema.DOM.Clauses;
 using Provident.Foundations.Sql.Schema.DOM.Enumerations;
+using Provident.Foundations.Sql.Schema.DOM.Expressions;
 
 namespace Provident.Foundations.Sql.Schema.DOM.Statements;
 
 /// <summary>
 /// Represents and defines a SQL Server SELECT statement.
 /// </summary>
+/// <remarks>
+/// Add expressions to <see cref="GroupByExpressions"/> and sort items to
+/// <see cref="OrderByItems"/> to generate optional GROUP BY and ORDER BY clauses.
+/// An empty collection omits its clause.
+/// </remarks>
 /// <seealso cref="SqlCodeStatement" />
 public sealed class SqlCodeSelectStatement : SqlCodeStatement
 {
@@ -25,7 +31,13 @@ public sealed class SqlCodeSelectStatement : SqlCodeStatement
     private SqlCodeWhereClause? _whereClause;
     #endregion
 
-    #region Constructor / Dispose Methods        
+    /// <summary>Gets the expressions in the GROUP BY clause, in order.</summary>
+    public SqlCodeExpressionCollection GroupByExpressions { get; } = new();
+
+    /// <summary>Gets the expressions and directions in the ORDER BY clause, in order.</summary>
+    public List<SqlCodeOrderByItem> OrderByItems { get; } = new();
+
+    #region Constructor / Dispose Methods
     /// <summary>
     /// Initializes a new instance of the <see cref="SqlCodeSelectStatement"/> class.
     /// </summary>
@@ -73,6 +85,8 @@ public sealed class SqlCodeSelectStatement : SqlCodeStatement
             _fromClause?.Dispose();
             _selectClause?.Dispose();
             _whereClause?.Dispose();
+            GroupByExpressions.Clear();
+            OrderByItems.Clear();
         }
 
         _fromClause = null;
@@ -148,7 +162,16 @@ public sealed class SqlCodeSelectStatement : SqlCodeStatement
     /// </returns>
     public override SqlCodeSelectStatement Clone()
     {
-        return new SqlCodeSelectStatement(_selectClause, _fromClause, _whereClause);
+        SqlCodeSelectStatement clone = new(_selectClause, _fromClause, _whereClause);
+        foreach (SqlCodeExpression expression in GroupByExpressions)
+        {
+            clone.GroupByExpressions.Add(expression.Clone());
+        }
+        foreach (SqlCodeOrderByItem item in OrderByItems)
+        {
+            clone.OrderByItems.Add(item.Clone());
+        }
+        return clone;
     }
     #endregion
 }

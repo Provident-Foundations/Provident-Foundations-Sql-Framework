@@ -60,6 +60,60 @@ internal sealed class SqlClauseWriter : SafeGeneratorWriterBase
     #endregion
 
     #region Public Methods / Functions
+    public void WriteGroupByClause(IReadOnlyList<SqlCodeExpression> expressions)
+    {
+        if (expressions.Count == 0) return;
+        SafeWriteTabs();
+        SafeWrite("GROUP BY ");
+        for (int i = 0; i < expressions.Count; i++)
+        {
+            if (i > 0) SafeWrite(", ");
+            _expressionWriter!.WriteExpression(expressions[i]);
+        }
+        SafeWriteLine();
+    }
+
+    public async Task WriteGroupByClauseAsync(IReadOnlyList<SqlCodeExpression> expressions)
+    {
+        if (expressions.Count == 0) return;
+        await SafeWriteTabsAsync().ConfigureAwait(false);
+        await SafeWriteAsync("GROUP BY ").ConfigureAwait(false);
+        for (int i = 0; i < expressions.Count; i++)
+        {
+            if (i > 0) await SafeWriteAsync(", ").ConfigureAwait(false);
+            await _expressionWriter!.WriteExpressionAsync(expressions[i]).ConfigureAwait(false);
+        }
+        await SafeWriteLineAsync().ConfigureAwait(false);
+    }
+
+    public void WriteOrderByClause(IReadOnlyList<SqlCodeOrderByItem> items)
+    {
+        if (items.Count == 0) return;
+        SafeWriteTabs();
+        SafeWrite("ORDER BY ");
+        for (int i = 0; i < items.Count; i++)
+        {
+            if (i > 0) SafeWrite(", ");
+            _expressionWriter!.WriteExpression(items[i].Expression);
+            SafeWrite(items[i].Descending ? " DESC" : " ASC");
+        }
+        SafeWriteLine();
+    }
+
+    public async Task WriteOrderByClauseAsync(IReadOnlyList<SqlCodeOrderByItem> items)
+    {
+        if (items.Count == 0) return;
+        await SafeWriteTabsAsync().ConfigureAwait(false);
+        await SafeWriteAsync("ORDER BY ").ConfigureAwait(false);
+        for (int i = 0; i < items.Count; i++)
+        {
+            if (i > 0) await SafeWriteAsync(", ").ConfigureAwait(false);
+            await _expressionWriter!.WriteExpressionAsync(items[i].Expression).ConfigureAwait(false);
+            await SafeWriteAsync(items[i].Descending ? " DESC" : " ASC").ConfigureAwait(false);
+        }
+        await SafeWriteLineAsync().ConfigureAwait(false);
+    }
+
     /// <summary>
     /// Writes the FROM clause of a SQL SELECT statement.
     /// </summary>
@@ -186,11 +240,11 @@ internal sealed class SqlClauseWriter : SafeGeneratorWriterBase
                 await SafeWriteTabsAsync().ConfigureAwait(false);
                 if (joinItem.IsLeftJoin)
                 {
-                    await SafeWriteAsync(RenderLeftJoin()).ConfigureAwait(false);
+                    await SafeWriteAsync(RenderLeftJoin() + " ").ConfigureAwait(false);
                 }
                 else
                 {
-                    await SafeWriteAsync(RenderInnerJoin()).ConfigureAwait(false);
+                    await SafeWriteAsync(RenderInnerJoin() + " ").ConfigureAwait(false);
                 }
 
                 // [dbo].[Table] [Alias]
@@ -303,7 +357,7 @@ internal sealed class SqlClauseWriter : SafeGeneratorWriterBase
                         }
                         else
                         {
-                            WriteSelectListItemExpression(listItem, SelectDelimiter);
+                            WriteSelectListItemExpression(listItem, count < lastIndex ? SelectDelimiter : string.Empty);
                         }
 
                         break;
@@ -356,7 +410,7 @@ internal sealed class SqlClauseWriter : SafeGeneratorWriterBase
                         }
                         else
                         {
-                            await WriteSelectListItemExpressionAsync(listItem, SelectDelimiter);
+                            await WriteSelectListItemExpressionAsync(listItem, count < lastIndex ? SelectDelimiter : string.Empty);
                         }
 
                         break;
@@ -470,13 +524,13 @@ internal sealed class SqlClauseWriter : SafeGeneratorWriterBase
 
             // [(] <condition> <operator> <condition> [)] [AND|OR]
 
+            bool useParens = whereClause.Conditions.Count > 1;
             foreach (SqlCodeConditionListExpression expression in whereClause.Conditions)
             {
                 await SafeWriteTabsAsync().ConfigureAwait(false);
-                await _expressionWriter.WriteConditionListExpressionAsync(expression).ConfigureAwait(false);
+                await _expressionWriter.WriteConditionListExpressionAsync(expression, useParens).ConfigureAwait(false);
                 await SafeWriteLineAsync().ConfigureAwait(false);
             }
-            await SafeWriteLineAsync().ConfigureAwait(false);
             SafeUnIndent();
         }
     }

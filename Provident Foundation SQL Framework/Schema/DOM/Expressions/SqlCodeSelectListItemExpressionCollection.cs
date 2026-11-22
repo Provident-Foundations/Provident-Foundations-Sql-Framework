@@ -64,12 +64,15 @@ namespace Provident.Foundations.Sql.Schema.DOM.Expressions
             int index = -1;
             int pos = Count - 1;
 
-            while (index == -1 && pos > 0)
+            while (index == -1 && pos >= 0)
             {
                 SqlCodeSelectListItemExpression item = this[pos];
 
                 switch (item.Expression)
                 {
+                    case null:
+                    case SqlCodeCommentExpression:
+                        break;
                     case SqlCodeLiteralExpression literalExpression:
                         if (!string.IsNullOrEmpty(literalExpression.Expression))
                         {

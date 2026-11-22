@@ -223,7 +223,11 @@ namespace Provident.Foundations.Sql.Schema.DOM.Clauses
         /// </returns>
         public SqlCodeJoinClause Clone()
         {
-            return new SqlCodeJoinClause(_referencedTable, _leftColumn, _rightColumn, _leftJoin);
+            return new SqlCodeJoinClause(_referencedTable?.Clone(), _leftColumn?.Clone(), _rightColumn?.Clone(), _leftJoin)
+            {
+                _operator = _operator,
+                _noLock = _noLock
+            };
         }
         #endregion
 

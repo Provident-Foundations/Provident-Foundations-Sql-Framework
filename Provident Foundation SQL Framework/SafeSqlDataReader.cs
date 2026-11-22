@@ -416,6 +416,65 @@ public sealed class SafeSqlDataReader : ExceptionTrackingBase, ISafeSqlDataReade
         return columnName;
 
     }
+
+    /// <summary>
+    /// Gets the value of the specified column as a Date/Time.
+    /// </summary>
+    /// <param name="index">
+    /// The zero-based column ordinal value.
+    /// </param>
+    /// <returns>
+    /// The value of the column as a <see cref="DateTime"/>, or <see cref="DateTime.MinValue"/> if the
+    /// operation fails.
+    /// </returns>
+    public DateOnly GetDateOnly (int index)
+    {
+        DateOnly returnValue = DateOnly.MinValue;
+
+        if ((_reader != null) && (index > -1))
+        {
+            try
+            {
+                if (!_reader.IsDBNull(index))
+                {
+                    DateTime date = _reader.GetDateTime(index).Date;
+                    returnValue = new DateOnly(date.Year, date.Month, date.Day);
+                }
+            }
+            catch (Exception ex) { AddException(ex); }
+        }
+        return returnValue;
+    }
+
+    /// <summary>
+    /// Gets the value of the specified column as a Date/Time.
+    /// </summary>
+    /// <param name="index">
+    /// The zero-based column ordinal value.
+    /// </param>
+    /// <returns>
+    /// The value of the column as a <see cref="DateTime"/>, or <see cref="DateTime.MinValue"/> if the
+    /// operation fails.
+    /// </returns>
+    public DateOnly? GetDateOnlyNullable(int index)
+    {
+        DateOnly? returnValue = null;
+
+        if ((_reader != null) && (index > -1))
+        {
+            try
+            {
+                if (!_reader.IsDBNull(index))
+                {
+                    DateTime date = _reader.GetDateTime(index).Date;
+                    returnValue = new DateOnly(date.Year, date.Month, date.Day);
+                }
+            }
+            catch (Exception ex) { AddException(ex); }
+        }
+        return returnValue;
+    }
+
     /// <summary>
     /// Gets the value of the specified column as a Date/Time.
     /// </summary>

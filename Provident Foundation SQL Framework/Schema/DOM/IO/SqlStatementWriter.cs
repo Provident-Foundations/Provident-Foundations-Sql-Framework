@@ -425,12 +425,8 @@ internal sealed class SqlStatementWriter : SafeGeneratorWriterBase
             // WHERE ...
             _clauseWriter.WriteWhereClause(statement.WhereClause);
 
-            //TODO: Future
-            //// GROUP BY
-            //_clauseWriter.WriteGroupByClause(statement.WhereClause);
-
-            //// ORDER BY
-            //_clauseWriter.WriteOrderByClause(statement.WhereClause);
+            _clauseWriter.WriteGroupByClause(statement.GroupByExpressions);
+            _clauseWriter.WriteOrderByClause(statement.OrderByItems);
         }
     }
     /// <summary>
@@ -452,12 +448,8 @@ internal sealed class SqlStatementWriter : SafeGeneratorWriterBase
             // WHERE ...
             await _clauseWriter.WriteWhereClauseAsync(statement.WhereClause).ConfigureAwait(false);
 
-            //TODO: Future
-            //// GROUP BY
-            //_clauseWriter.WriteGroupByClause(statement.WhereClause);
-
-            //// ORDER BY
-            //_clauseWriter.WriteOrderByClause(statement.WhereClause);
+            await _clauseWriter.WriteGroupByClauseAsync(statement.GroupByExpressions).ConfigureAwait(false);
+            await _clauseWriter.WriteOrderByClauseAsync(statement.OrderByItems).ConfigureAwait(false);
         }
     }
     /// <summary>

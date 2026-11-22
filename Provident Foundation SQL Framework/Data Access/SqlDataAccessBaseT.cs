@@ -149,7 +149,7 @@ public abstract class SqlDataAccessBase<T> : SqlDataAccessBase
     /// </returns>
     public async Task<T?> ReadSingleRecordAsync(ISafeSqlDataReader? reader)
     {
-        T? dto = default(T);
+        T? dto = default;
 
         if (reader != null)
         {
