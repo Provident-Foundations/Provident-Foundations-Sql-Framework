@@ -1,7 +1,7 @@
 ﻿using Provident.Foundations.Abstractions;
 using System.Collections.Specialized;
 
-namespace Adaptive.SqlMaker
+namespace Provident.Foundations.SqlMaker
 {
     /// <summary>
     /// Represents and manages the profile information for a database table that is included in the project.

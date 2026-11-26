@@ -1,8 +1,8 @@
-﻿using Adaptive.SqlMaker.Interfaces.IO;
+﻿using Provident.Foundations.SqlMaker.Interfaces.IO;
 using Provident.Foundations.Abstractions;
 using System.Xml;
 
-namespace Adaptive.SqlMaker.Project
+namespace Provident.Foundations.SqlMaker.Project
 {
     /// <summary>
     /// Provides a helper class for reading XML elements from an XML document.

@@ -1,4 +1,4 @@
-﻿namespace Adaptive.SqlMaker
+﻿namespace Provident.Foundations.SqlMaker
 {
     /// <summary>
     /// Provides the standard constants for reading/writing the Database Project XML file(s).

@@ -1,6 +1,6 @@
 ﻿using Provident.Foundations.Abstractions;
 
-namespace Adaptive.SqlMaker
+namespace Provident.Foundations.SqlMaker
 {
     /// <summary>
     /// Represents a database table that is a member of the project.
@@ -42,6 +42,7 @@ namespace Adaptive.SqlMaker
         {
             _profile = new SqlDataProjectTableProfile();
         }
+
         /// <summary>
         /// Releases unmanaged and - optionally - managed resources.
         /// </summary>

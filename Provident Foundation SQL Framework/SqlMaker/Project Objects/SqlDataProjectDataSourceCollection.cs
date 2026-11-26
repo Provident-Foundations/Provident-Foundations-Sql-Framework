@@ -1,6 +1,6 @@
 ﻿using Provident.Foundations.Collections;
 
-namespace Adaptive.SqlMaker
+namespace Provident.Foundations.SqlMaker
 {
     /// <summary>
     /// Contains a list of data sources used by the project.

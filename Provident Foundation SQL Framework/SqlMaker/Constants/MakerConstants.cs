@@ -1,6 +1,6 @@
 ﻿using Provident.Foundations.Constants;
 
-namespace Adaptive.SqlMaker
+namespace Provident.Foundations.SqlMaker
 {
     /// <summary>
     /// Provides the standard constants and static methods for the application.

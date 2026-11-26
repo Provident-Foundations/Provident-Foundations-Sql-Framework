@@ -1,6 +1,6 @@
 ﻿using Provident.Foundations.Collections;
 
-namespace Adaptive.SqlMaker
+namespace Provident.Foundations.SqlMaker
 {
     /// <summary>
     /// Contains a list of <see cref="SqlDataProjectTable"/> instances indexed by schema and name.

@@ -1,7 +1,7 @@
 ﻿using Microsoft.Data.SqlClient;
 using Provident.Foundations.Abstractions;
 
-namespace Adaptive.SqlMaker
+namespace Provident.Foundations.SqlMaker
 {
     /// <summary>
     /// Represents and manages the data for a SQL Server data source connection.

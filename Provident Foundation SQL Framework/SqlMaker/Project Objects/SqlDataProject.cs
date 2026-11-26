@@ -1,7 +1,7 @@
-﻿using Adaptive.SqlMaker.Interfaces;
+﻿using Provident.Foundations.SqlMaker.Interfaces;
 using Provident.Foundations.Abstractions;
 
-namespace Adaptive.SqlMaker
+namespace Provident.Foundations.SqlMaker
 {
     /// <summary>
     /// Represents and contains the data for the SQL Maker Project file.

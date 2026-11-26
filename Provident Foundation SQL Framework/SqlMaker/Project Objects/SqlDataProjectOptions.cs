@@ -1,7 +1,7 @@
 ﻿using Provident.Foundations.Abstractions;
 using System.Collections.Specialized;
 
-namespace Adaptive.SqlMaker
+namespace Provident.Foundations.SqlMaker
 {
     /// <summary>
     /// Represents and contains the various option settings for the project.

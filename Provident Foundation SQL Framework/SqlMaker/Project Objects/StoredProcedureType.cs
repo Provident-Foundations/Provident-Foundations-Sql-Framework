@@ -1,4 +1,4 @@
-﻿namespace Adaptive.SqlMaker
+﻿namespace Provident.Foundations.SqlMaker
 {
     /// <summary>
     /// Lists the types of stored procedures that are currently supported.

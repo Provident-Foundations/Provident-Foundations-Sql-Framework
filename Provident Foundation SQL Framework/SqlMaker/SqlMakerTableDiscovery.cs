@@ -1,11 +1,6 @@
 using Microsoft.Data.SqlClient;
 
-namespace Adaptive.SqlMaker;
-
-/// <summary>Describes a table discovered in a SQL Server database.</summary>
-/// <param name="Schema">The table's schema name.</param>
-/// <param name="Name">The table name.</param>
-public sealed record SqlMakerTableInfo(string Schema, string Name);
+namespace Provident.Foundations.SqlMaker;
 
 /// <summary>Discovers user tables for a SQL Maker project.</summary>
 public static class SqlMakerTableDiscovery

@@ -1,8 +1,8 @@
-﻿using Adaptive.SqlMaker.Project;
+﻿using Provident.Foundations.SqlMaker.Project;
 using Provident.Foundations.Abstractions;
 using System.Xml;
 
-namespace Adaptive.SqlMaker
+namespace Provident.Foundations.SqlMaker
 {
     /// <summary>
     /// Performs the task of writing a SQL Data project to an XML file.

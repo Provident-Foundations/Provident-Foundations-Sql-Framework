@@ -1,6 +1,6 @@
 ﻿using Provident.Foundations.Abstractions;
 
-namespace Adaptive.SqlMaker
+namespace Provident.Foundations.SqlMaker
 {
     /// <summary>
     /// Represents and contains the information for a generated stored procedure.
