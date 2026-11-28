@@ -1,7 +1,7 @@
 ﻿using Provident.Foundations.Constants;
 using Provident.Foundations.Sql.Schema.DOM.Enumerations;
 
-namespace Provident.Foundations.SqlServer.Schema;
+namespace Provident.Foundations.Sql.Schema;
 
 /// <summary>
 /// Represents a query parameter definition.
@@ -92,9 +92,7 @@ public sealed class SqlQueryParameter : SqlDataTypeSpecification
                 return null;
             }
 
-            return CharacterConstants.At +
-                   ColumnName.Substring(0, 1).ToUpper() +
-                   ColumnName.Substring(1, ColumnName.Length - 1);
+            return string.Concat(CharacterConstants.At, ColumnName.Substring(0, 1).ToUpper(), ColumnName.AsSpan(1, ColumnName.Length - 1));
         }
     }
     /// <summary>

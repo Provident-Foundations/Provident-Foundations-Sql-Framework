@@ -1,6 +1,6 @@
 ﻿using Provident.Foundations.Sql.Provider;
 
-namespace Provident.Foundations.SqlServer.Schema
+namespace Provident.Foundations.Sql.Schema
 {
     /// <summary>
     /// Provides static methods / functions for loading the schema of a database.

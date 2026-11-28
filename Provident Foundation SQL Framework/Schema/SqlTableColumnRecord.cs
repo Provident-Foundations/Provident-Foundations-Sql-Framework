@@ -2,7 +2,7 @@
 
 using Provident.Foundations.Abstractions;
 
-namespace Provident.Foundations.SqlServer.Schema
+namespace Provident.Foundations.Sql.Schema
 {
     /// <summary>
     /// Represents the raw data read from the Get Tables And Columns SQL Query.

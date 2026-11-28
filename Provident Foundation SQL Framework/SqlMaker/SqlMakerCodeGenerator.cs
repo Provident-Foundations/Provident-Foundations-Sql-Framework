@@ -1,9 +1,10 @@
 using System.Globalization;
 using System.Text;
+using Provident.Foundations.Sql.Schema;
 using Provident.Foundations.Sql.Schema.DOM.Enumerations;
-using Provident.Foundations.SqlServer.Schema;
+using Provident.Foundations.SqlMaker;
 
-namespace Provident.Foundations.SqlMaker;
+namespace Provident.Foundations.Sql.SqlMaker;
 
 /// <summary>Contains source generators for explicitly configured SQL Maker table artifacts.</summary>
 public static class SqlMakerCodeGenerator

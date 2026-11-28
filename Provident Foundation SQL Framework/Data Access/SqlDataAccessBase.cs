@@ -30,7 +30,7 @@ public abstract class SqlDataAccessBase : DataAccessBase
     /// <summary>
     /// The connection string.
     /// </summary>
-    private string _connectionString;
+    private readonly string _connectionString;
     #endregion
 
     #region Constructor / Dispose Methods

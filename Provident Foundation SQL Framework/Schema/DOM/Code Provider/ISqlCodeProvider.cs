@@ -1,7 +1,5 @@
-﻿using Provident.Foundations.SqlServer.Schema;
-using Provident.Foundations.Sql.Schema.DOM.Enumerations;
+﻿using Provident.Foundations.Sql.Schema.DOM.Enumerations;
 using Provident.Foundations.Sql.Schema.DOM.Expressions;
-using Provident.Foundation.Sql.Schema.DOM.Enumerations;
 
 namespace Provident.Foundations.SqlServer.CodeDom.CodeProvider;
 

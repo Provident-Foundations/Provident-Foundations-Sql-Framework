@@ -1,6 +1,4 @@
-﻿using Provident.Foundations.Sql.Schema.DOM.Expressions;
-
-namespace Provident.Foundation.Sql.Schema.DOM.Expressions
+﻿namespace Provident.Foundations.Sql.Schema.DOM.Expressions
 {
     /// <summary>
     /// Represents a SQL stored procedure name.
@@ -60,7 +58,6 @@ namespace Provident.Foundation.Sql.Schema.DOM.Expressions
             set => _spName = value;
         }
         #endregion
-
 
         #region Public Methods / Functions
         /// <summary>

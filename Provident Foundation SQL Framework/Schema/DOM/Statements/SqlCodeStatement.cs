@@ -4,7 +4,7 @@ using Provident.Foundations.Sql.Schema.DOM.IO;
 using Provident.Foundations.SqlServer.CodeDom.CodeProvider;
 using System.Text;
 
-namespace Provident.Foundation.Sql.Schema.DOM.Statements;
+namespace Provident.Foundations.Sql.Schema.DOM.Statements;
 
 /// <summary>
 /// Represents and defines a SQL Server statement.
@@ -75,6 +75,7 @@ public abstract class SqlCodeStatement : DisposableObjectBase, ICloneable
         writer.WriteStatement(this);
         writer.Flush();
     }
+
     /// <summary>
     /// Returns a <see cref="string" /> that represents this instance.
     /// </summary>

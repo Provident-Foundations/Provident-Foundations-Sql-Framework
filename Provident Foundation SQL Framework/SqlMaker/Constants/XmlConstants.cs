@@ -1,4 +1,4 @@
-﻿namespace Provident.Foundations.SqlMaker
+﻿namespace Provident.Foundations.Sql.SqlMaker.Constants
 {
     /// <summary>
     /// Provides the standard constants for reading/writing the Database Project XML file(s).

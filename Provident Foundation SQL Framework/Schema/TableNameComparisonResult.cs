@@ -1,6 +1,6 @@
 ﻿using Provident.Foundations.Abstractions;
 
-namespace Provident.Foundations.SqlServer.Schema
+namespace Provident.Foundations.Sql.Schema
 {
     /// <summary>
     /// Contains the results of searching for a table name.

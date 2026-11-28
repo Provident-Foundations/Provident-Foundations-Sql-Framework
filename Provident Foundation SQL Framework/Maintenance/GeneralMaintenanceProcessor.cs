@@ -5,9 +5,8 @@ using Provident.Foundations.Sql.Constants;
 using Provident.Foundations.Sql.DataAccess;
 using Provident.Foundations.Sql.Properties;
 using Provident.Foundations.Sql.Provider;
-using Provident.Foundations.SqlServer.Maintenance;
 
-namespace Provident.Foundations.SqlServer;
+namespace Provident.Foundations.Sql.Maintenance;
 
 /// <summary>
 /// Provides methods to perform general maintenance activity for table indexes.
@@ -889,7 +888,7 @@ public sealed class GeneralMaintenanceProcessor : DisposableObjectBase
     private void PerformFragStatsUpdate(string? subStatus, int percentDone)
     {
         PerformStatusUpdate(
-            Resources.StatusCollecting, null, 0);
+            Resources.StatusCollecting, subStatus, percentDone);
     }
     /// <summary>
     /// Performs a UI update when collecting fragmentation statistics.

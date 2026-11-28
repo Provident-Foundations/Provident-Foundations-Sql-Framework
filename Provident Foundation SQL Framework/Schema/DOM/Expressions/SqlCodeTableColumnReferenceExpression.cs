@@ -1,6 +1,4 @@
-﻿using Provident.Foundations.Sql.Schema.DOM.Expressions;
-
-namespace Provident.Foundation.Sql.Schema.DOM.Expressions
+﻿namespace Provident.Foundations.Sql.Schema.DOM.Expressions
 {
     /// <summary>
     /// Represents a reference to a specific column in a specific table.

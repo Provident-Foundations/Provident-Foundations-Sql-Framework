@@ -14,10 +14,10 @@
     <ReadyToRun>true</ReadyToRun>
     <PackageLicenseFile>License.txt</PackageLicenseFile>
     <PackageId>Provident.Foundations.SqlServer</PackageId>
-    <Title>Provident.Foundations SQL Server Framework</Title>
-    <Version>0.91.1.0</Version>
-    <FileVersion>11.91.1.0</FileVersion>
-    <AssemblyVersion>11.91.1.0</AssemblyVersion>
+    <Title>Provident Foundations SQL Server Framework</Title>
+    <Version>11.98.3.0</Version>
+    <FileVersion>11.98.3.0</FileVersion>
+    <AssemblyVersion>11.98.3.0</AssemblyVersion>
     <Authors>Sam Jones</Authors>
     <Product>Provident Foundations SQL Server Framework</Product>
     <Description>A general-purpose, portable .NET class library for SQL Server database development on .NET 11</Description>
@@ -29,6 +29,9 @@
     <PackageIcon>Nuget Package Logo For Applications.png</PackageIcon>
     <RepositoryUrl>https://github.com/Provident-Foundations/Provident-Foundations-Sql-Framework</RepositoryUrl>
     <Platforms>AnyCPU;x64</Platforms>
+    <PlatformTarget>x64</PlatformTarget>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+    <Company>Provident Foundations</Company>
   </PropertyGroup>
 
   <ItemGroup>
@@ -36,13 +39,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Data.SqlClient" Version="7.1.2" />
-	  <PackageReference Include="Microsoft.SqlServer.DacFx" Version="170.5.96" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="8.0.0" />
+	  <PackageReference Include="Microsoft.SqlServer.DacFx" Version="170.6.60" />
 	  <PackageReference Include="Microsoft.SqlServer.SqlManagementObjects" Version="181.46.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\Core\Provident Foundations Framework\Provident.Foundations\Provident.Foundations.csproj" />
+	  <PackageReference Include="Provident.Foundations" Version="11.98.3" />
   </ItemGroup>
 
   <ItemGroup>

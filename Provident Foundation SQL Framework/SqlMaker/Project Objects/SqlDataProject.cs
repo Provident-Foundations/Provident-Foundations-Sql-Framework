@@ -1,5 +1,6 @@
-﻿using Provident.Foundations.SqlMaker.Interfaces;
-using Provident.Foundations.Abstractions;
+﻿using Provident.Foundations.Abstractions;
+using Provident.Foundations.Sql.SqlMaker.Constants;
+using Provident.Foundations.Sql.SqlMaker.Interfaces;
 
 namespace Provident.Foundations.SqlMaker
 {

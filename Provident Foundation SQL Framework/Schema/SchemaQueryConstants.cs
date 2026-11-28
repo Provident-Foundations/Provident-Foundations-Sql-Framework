@@ -2,7 +2,7 @@
 
 using Provident.Foundations.Sql.Properties;
 
-namespace Provident.Foundations.SqlServer.Schema
+namespace Provident.Foundations.Sql.Schema
 {
     /// <summary>
     /// Provides the constants for standard SQL Server queries used to retrieve the schema information for a specified database.

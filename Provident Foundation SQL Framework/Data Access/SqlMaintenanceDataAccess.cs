@@ -1,8 +1,8 @@
 ﻿using Provident.Foundations.Abstractions;
 using Provident.Foundations.Sql.Abstractions;
 using Provident.Foundations.Sql.Constants;
+using Provident.Foundations.Sql.Maintenance;
 using Provident.Foundations.Sql.Provider;
-using Provident.Foundations.SqlServer.Maintenance;
 
 namespace Provident.Foundations.Sql.DataAccess;
 
@@ -380,10 +380,7 @@ public sealed class SqlMaintenanceDataAccess : SqlDataAccessBase
                     Name = reader.GetString(index++),
                     ObjectId = reader.GetInt32(index)
                 };
-                if (db != null)
-                {
-                    db.AddTable(table);
-                }
+                db?.AddTable(table);
             }
             reader.NextResult();
         }
@@ -412,10 +409,7 @@ public sealed class SqlMaintenanceDataAccess : SqlDataAccessBase
                     Name = reader.GetString(index++),
                     PrimaryKey = reader.GetBoolean(index)
                 };
-                if (db != null)
-                {
-                    db.AddIndexToTable(newIndex.TableId, newIndex);
-                }
+                db?.AddIndexToTable(newIndex.TableId, newIndex);
             }
             reader.NextResult();
         }

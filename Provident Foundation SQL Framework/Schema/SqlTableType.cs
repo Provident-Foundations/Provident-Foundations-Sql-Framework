@@ -1,7 +1,7 @@
 ﻿using Provident.Foundations.Abstractions;
 using Provident.Foundations.Sql.Abstractions;
 
-namespace Provident.Foundations.SqlServer.Schema
+namespace Provident.Foundations.Sql.Schema
 {
     /// <summary>
     /// Represents a SQL table-data-type definition.

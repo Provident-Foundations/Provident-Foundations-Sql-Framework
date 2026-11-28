@@ -4,7 +4,7 @@ using Provident.Foundations.Sql.Constants;
 using Provident.Foundations.Sql.Provider;
 using Provident.Foundations.Sql.Schema.DOM.MS;
 
-namespace Provident.Foundations.SqlServer.Schema;
+namespace Provident.Foundations.Sql.Schema;
 
 /// <summary>
 /// Represents a SQL Server table.

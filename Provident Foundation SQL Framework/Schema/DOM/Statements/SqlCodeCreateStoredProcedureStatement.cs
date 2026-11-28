@@ -1,8 +1,7 @@
 ﻿using Provident.Foundations.Sql.Schema.DOM.Enumerations;
 using Provident.Foundations.Sql.Schema.DOM.Expressions;
-using Provident.Foundations.Sql.Schema.DOM.Statements;
 
-namespace Provident.Foundation.Sql.Schema.DOM.Statements;
+namespace Provident.Foundations.Sql.Schema.DOM.Statements;
 
 /// <summary>
 /// Represents and defines a statement to create a stored procedure.

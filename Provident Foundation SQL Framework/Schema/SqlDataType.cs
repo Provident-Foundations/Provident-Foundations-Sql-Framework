@@ -3,7 +3,7 @@
 using Provident.Foundations.Sql.Abstractions;
 using Provident.Foundations.Sql.Schema.DOM.Enumerations;
 
-namespace Provident.Foundations.SqlServer.Schema;
+namespace Provident.Foundations.Sql.Schema;
 
 /// <summary>
 /// Represents a SQL data type.

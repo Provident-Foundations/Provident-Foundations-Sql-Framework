@@ -334,12 +334,14 @@ internal static class SMOProviderFactory
         try
         {
             SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder(provider.ConnectionString);
-            SqlConnectionInfo info = new SqlConnectionInfo();
-            info.ServerName = builder.DataSource;
-            info.DatabaseName = builder.InitialCatalog;
-            info.UserName = builder.UserID;
-            info.Password = builder.Password;
-            info.TrustServerCertificate = builder.TrustServerCertificate;
+            SqlConnectionInfo info = new SqlConnectionInfo
+            {
+                ServerName = builder.DataSource,
+                DatabaseName = builder.InitialCatalog,
+                UserName = builder.UserID,
+                Password = builder.Password,
+                TrustServerCertificate = builder.TrustServerCertificate
+            };
             switch (builder.Authentication)
             {
                 case SqlAuthenticationMethod.SqlPassword:

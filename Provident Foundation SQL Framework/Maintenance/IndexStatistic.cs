@@ -1,4 +1,4 @@
-﻿namespace Provident.Foundations.SqlServer.Maintenance;
+﻿namespace Provident.Foundations.Sql.Maintenance;
 
 /// <summary>
 /// Provides a data container for representing and recording statistics for a SQL Index

@@ -1,6 +1,7 @@
 ﻿using Provident.Foundations.SqlMaker.Project;
 using Provident.Foundations.Abstractions;
 using System.Xml;
+using Provident.Foundations.Sql.SqlMaker.Constants;
 
 namespace Provident.Foundations.SqlMaker
 {
@@ -337,11 +338,13 @@ namespace Provident.Foundations.SqlMaker
             if (_document != null && _xmlHelper != null && tableElement.Name == XmlConstants.ElementTable)
             {
                 // Create the list container element.
-                table = new SqlDataProjectTable();
-                table.Name = _xmlHelper.ReadAttributeString(tableElement, XmlConstants.AttributeName);
-                table.DataSourceName = _xmlHelper.ReadAttributeString(tableElement, XmlConstants.AttributeDataSourceName);
-                table.Qualifier = _xmlHelper.ReadAttributeString(tableElement, XmlConstants.AttributeQualifier);
-                table.LastUpdated = _xmlHelper.ReadAttributeDateTime(tableElement, XmlConstants.AttributeLastUpdated);
+                table = new SqlDataProjectTable
+                {
+                    Name = _xmlHelper.ReadAttributeString(tableElement, XmlConstants.AttributeName),
+                    DataSourceName = _xmlHelper.ReadAttributeString(tableElement, XmlConstants.AttributeDataSourceName),
+                    Qualifier = _xmlHelper.ReadAttributeString(tableElement, XmlConstants.AttributeQualifier),
+                    LastUpdated = _xmlHelper.ReadAttributeDateTime(tableElement, XmlConstants.AttributeLastUpdated)
+                };
 
                 ReadTableProfile(table.Profile, tableElement);
             }

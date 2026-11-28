@@ -205,10 +205,7 @@ public sealed class SafeSqlDataReader : ExceptionTrackingBase, ISafeSqlDataReade
             }
 
             // Release the reference to the connection.
-            if (_command != null)
-            {
-                _command.Connection = null;
-            }
+            _command?.Connection = null;
         }
 
         if (_reader != null)

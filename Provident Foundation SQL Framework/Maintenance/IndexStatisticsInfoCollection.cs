@@ -1,4 +1,4 @@
-﻿namespace Provident.Foundations.SqlServer.Maintenance;
+﻿namespace Provident.Foundations.Sql.Maintenance;
 
 /// <summary>
 /// Contains a list of <see cref="IndexStatisticsInfo"/> instances.

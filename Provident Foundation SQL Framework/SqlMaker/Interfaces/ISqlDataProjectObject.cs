@@ -1,6 +1,7 @@
 ﻿using Provident.Foundations.Abstractions;
+using Provident.Foundations.SqlMaker;
 
-namespace Provident.Foundations.SqlMaker.Interfaces
+namespace Provident.Foundations.Sql.SqlMaker.Interfaces
 {
     /// <summary>
     /// Provides the signature definition for the objects that constitute a SQL Maker database project.

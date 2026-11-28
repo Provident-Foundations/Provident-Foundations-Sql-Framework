@@ -1,6 +1,6 @@
-﻿using Provident.Foundation.Sql.Schema.DOM.Statements;
-using Provident.Foundations.Abstractions;
+﻿using Provident.Foundations.Abstractions;
 using Provident.Foundations.Sql.Schema.DOM.Expressions;
+using Provident.Foundations.Sql.Schema.DOM.Statements;
 using Provident.Foundations.SqlServer.CodeDom.CodeProvider;
 using System.Text;
 

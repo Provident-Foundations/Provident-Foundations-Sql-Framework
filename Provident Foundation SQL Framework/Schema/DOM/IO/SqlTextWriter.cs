@@ -54,10 +54,7 @@ namespace Provident.Foundations.Sql.Schema.DOM.IO
         /// </param>
         public SqlTextWriter(Stream destinationStream)
         {
-            if (destinationStream == null)
-            {
-                throw new ArgumentNullException(nameof(destinationStream));
-            }
+            ArgumentNullException.ThrowIfNull(destinationStream);
 
             if (!destinationStream.CanWrite)
             {

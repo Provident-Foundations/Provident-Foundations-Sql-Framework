@@ -1,6 +1,6 @@
 ﻿using Provident.Foundations.Collections;
 
-namespace Provident.Foundations.SqlServer.Schema
+namespace Provident.Foundations.Sql.Schema
 {
     /// <summary>
     /// Contains a list of <see cref="SqlColumn"/> instances.

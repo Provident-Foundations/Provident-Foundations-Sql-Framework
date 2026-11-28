@@ -2685,10 +2685,7 @@ public class SqlDataProvider : ExceptionTrackingBase, ISqlServerDataProvider
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(databaseName);
 
-        if (_connectionString != null)
-        {
-            _connectionString.InitialCatalog = databaseName;
-        }
+        _connectionString?.InitialCatalog = databaseName;
     }
     /// <summary>
     /// Tests the ability to connect to SQL Server asynchronously.

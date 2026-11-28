@@ -1,6 +1,4 @@
-﻿using Provident.Foundation.Sql.Schema.DOM.Statements;
-
-namespace Provident.Foundations.Sql.Schema.DOM.Statements
+﻿namespace Provident.Foundations.Sql.Schema.DOM.Statements
 {
     /// <summary>
     /// Contains a list of <see cref="SqlCodeStatement"/> instances.

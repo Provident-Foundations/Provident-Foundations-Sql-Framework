@@ -2,7 +2,7 @@
 
 using Provident.Foundations.Sql;
 
-namespace Provident.Foundations.SqlServer.Schema;
+namespace Provident.Foundations.Sql.Schema;
 
 /// <summary>
 /// Contains a list of <see cref="SqlDataType"/> instances. 

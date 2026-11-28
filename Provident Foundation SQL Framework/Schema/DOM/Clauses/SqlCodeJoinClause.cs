@@ -1,5 +1,4 @@
-﻿using Provident.Foundation.Sql.Schema.DOM.Enumerations;
-using Provident.Foundation.Sql.Schema.DOM.Expressions;
+﻿using Provident.Foundations.Sql.Schema.DOM.Enumerations;
 using Provident.Foundations.Sql.Schema.DOM.Expressions;
 
 namespace Provident.Foundations.Sql.Schema.DOM.Clauses

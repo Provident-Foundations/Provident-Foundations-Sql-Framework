@@ -1,6 +1,7 @@
-﻿using System.Collections;
+﻿using Provident.Foundations.SqlMaker;
+using System.Collections;
 
-namespace Provident.Foundations.SqlMaker.Interfaces
+namespace Provident.Foundations.Sql.SqlMaker.Interfaces
 {
     /// <summary>
     /// Provides the signature definition for a list container for objects that constitute a SQL Maker database project.

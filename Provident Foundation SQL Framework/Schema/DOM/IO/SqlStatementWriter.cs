@@ -2,9 +2,7 @@
 using Provident.Foundations.SqlServer.CodeDom.CodeProvider;
 using Provident.Foundations.Sql.Schema.DOM.Expressions;
 using Provident.Foundations.Sql.Schema.DOM.Statements;
-using Provident.Foundation.Sql.Schema.DOM.Statements;
 using Provident.Foundations.Constants;
-using Provident.Foundation.Sql.Schema.DOM.Expressions;
 
 namespace Provident.Foundations.Sql.Schema.DOM.IO;
 

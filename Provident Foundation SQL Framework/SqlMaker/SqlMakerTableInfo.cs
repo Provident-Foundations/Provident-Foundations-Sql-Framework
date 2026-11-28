@@ -1,4 +1,4 @@
-namespace Provident.Foundations.SqlMaker;
+namespace Provident.Foundations.Sql.SqlMaker;
 
 /// <summary>Describes a table discovered in a SQL Server database.</summary>
 /// <param name="Schema">The table's schema name.</param>

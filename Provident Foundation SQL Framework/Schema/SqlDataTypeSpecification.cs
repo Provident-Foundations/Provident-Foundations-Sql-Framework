@@ -1,6 +1,6 @@
 ﻿using Provident.Foundations.Abstractions;
 
-namespace Provident.Foundations.SqlServer.Schema
+namespace Provident.Foundations.Sql.Schema
 {
     /// <summary>
     /// Provides a base definition for types that reflect common data type-specification properties.

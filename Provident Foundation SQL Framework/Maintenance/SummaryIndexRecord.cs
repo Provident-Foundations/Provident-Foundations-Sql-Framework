@@ -1,6 +1,6 @@
 ﻿using Provident.Foundations.Abstractions;
 
-namespace Provident.Foundations.SqlServer.Maintenance;
+namespace Provident.Foundations.Sql.Maintenance;
 
 /// <summary>
 /// Contains summary information about index fragmentation.

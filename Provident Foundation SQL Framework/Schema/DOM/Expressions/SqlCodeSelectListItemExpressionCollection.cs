@@ -1,5 +1,4 @@
-﻿using Provident.Foundation.Sql.Schema.DOM.Expressions;
-using Provident.Foundations.Sql.Constants;
+﻿using Provident.Foundations.Sql.Constants;
 
 namespace Provident.Foundations.Sql.Schema.DOM.Expressions
 {

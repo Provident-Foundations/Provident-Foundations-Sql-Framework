@@ -1,6 +1,6 @@
 ﻿using System.Xml;
 
-namespace Provident.Foundations.SqlMaker.Interfaces.IO
+namespace Provident.Foundations.Sql.SqlMaker.Interfaces.IO.Writer
 {
     /// <summary>
     /// Provides the signature definition for objects used to writer structured XML data to an XML Document.

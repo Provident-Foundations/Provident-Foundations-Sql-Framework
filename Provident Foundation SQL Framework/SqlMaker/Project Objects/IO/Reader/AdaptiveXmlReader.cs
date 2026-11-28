@@ -1,6 +1,6 @@
-﻿using Provident.Foundations.SqlMaker.Interfaces.IO;
-using Provident.Foundations.Abstractions;
+﻿using Provident.Foundations.Abstractions;
 using System.Xml;
+using Provident.Foundations.Sql.SqlMaker.Interfaces.IO.Reader;
 
 namespace Provident.Foundations.SqlMaker.Project
 {

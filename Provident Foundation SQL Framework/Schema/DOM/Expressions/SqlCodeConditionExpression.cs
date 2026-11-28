@@ -1,4 +1,4 @@
-﻿using Provident.Foundation.Sql.Schema.DOM.Enumerations;
+﻿using Provident.Foundations.Sql.Schema.DOM.Enumerations;
 
 namespace Provident.Foundations.Sql.Schema.DOM.Expressions;
 

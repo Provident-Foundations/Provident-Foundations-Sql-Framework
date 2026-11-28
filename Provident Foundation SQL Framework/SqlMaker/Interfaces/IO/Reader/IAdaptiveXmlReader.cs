@@ -1,6 +1,6 @@
 ﻿using System.Xml;
 
-namespace Provident.Foundations.SqlMaker.Interfaces.IO
+namespace Provident.Foundations.Sql.SqlMaker.Interfaces.IO.Reader
 {
     /// <summary>
     /// Provides the signature definition for objects used to read structured XML data from an XML Document.

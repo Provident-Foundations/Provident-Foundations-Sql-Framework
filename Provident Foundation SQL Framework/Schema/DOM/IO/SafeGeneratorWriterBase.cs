@@ -1,10 +1,8 @@
 ﻿using Provident.Foundations.Abstractions;
-using Provident.Foundations.SqlServer.CodeDom.CodeProvider;
-using Provident.Foundations.SqlServer.Schema;
+using Provident.Foundations.Constants;
 using Provident.Foundations.Sql.Schema.DOM.Enumerations;
 using Provident.Foundations.Sql.Schema.DOM.Expressions;
-using Provident.Foundation.Sql.Schema.DOM.Enumerations;
-using Provident.Foundations.Constants;
+using Provident.Foundations.SqlServer.CodeDom.CodeProvider;
 
 namespace Provident.Foundations.Sql.Schema.DOM.IO
 {
@@ -588,20 +586,14 @@ namespace Provident.Foundations.Sql.Schema.DOM.IO
         /// </summary>
         protected void SafeIndent()
         {
-            if (_writer != null)
-            {
-                _writer.Indent();
-            }
+            _writer?.Indent();
         }
         /// <summary>
         /// Decreases the indentation level.
         /// </summary>
         protected void SafeUnIndent()
         {
-            if (_writer != null)
-            {
-                _writer.UnIndent();
-            }
+            _writer?.UnIndent();
         }
 
         /// <summary>
@@ -635,10 +627,7 @@ namespace Provident.Foundations.Sql.Schema.DOM.IO
         /// </summary>
         protected void SafeWriteLine()
         {
-            if (_writer != null)
-            {
-                _writer.WriteLine();
-            }
+            _writer?.WriteLine();
         }
         /// <summary>
         /// Safely writes a new line to the output stream.
@@ -681,10 +670,7 @@ namespace Provident.Foundations.Sql.Schema.DOM.IO
         /// </summary>
         protected void SafeWriteTabs()
         {
-            if (_writer != null)
-            {
-                _writer.WriteTabs();
-            }
+            _writer?.WriteTabs();
         }
         /// <summary>
         /// Safely writes the number of tabs to the output stream.
@@ -704,10 +690,7 @@ namespace Provident.Foundations.Sql.Schema.DOM.IO
         /// </param>
         protected void SafeWriteTabs(int tabCount)
         {
-            if (_writer != null)
-            {
-                _writer.Write(new string(CharacterConstants.TabChar, tabCount));
-            }
+            _writer?.Write(new string(CharacterConstants.TabChar, tabCount));
         }
         /// <summary>
         /// Safely writes the number of tabs to the output stream.

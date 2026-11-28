@@ -1,6 +1,6 @@
 ﻿using Provident.Foundations.Sql;
 
-namespace Provident.Foundations.SqlServer.Schema;
+namespace Provident.Foundations.Sql.Schema;
 
 /// <summary>
 /// Represents a column definition on a table.

@@ -1,6 +1,6 @@
 using Microsoft.Data.SqlClient;
 
-namespace Provident.Foundations.SqlMaker;
+namespace Provident.Foundations.Sql.SqlMaker;
 
 /// <summary>Discovers user tables for a SQL Maker project.</summary>
 public static class SqlMakerTableDiscovery

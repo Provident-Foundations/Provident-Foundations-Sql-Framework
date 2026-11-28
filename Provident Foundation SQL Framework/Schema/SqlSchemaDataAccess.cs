@@ -3,7 +3,7 @@ using Provident.Foundations.Sql.Constants;
 using Provident.Foundations.Sql.DataAccess;
 using Provident.Foundations.Sql.Provider;
 
-namespace Provident.Foundations.SqlServer.Schema
+namespace Provident.Foundations.Sql.Schema
 {
     /// <summary>
     /// Provides the data access methods for retrieving schema information from a SQL Server database.
@@ -390,10 +390,7 @@ namespace Provident.Foundations.SqlServer.Schema
                         TypeId = record.TypeId,
                         IsAnsiPadded = record.IsPadded
                     };
-                    if (table.Columns != null)
-                    {
-                        table.Columns.Add(newColumn);
-                    }
+                    table.Columns?.Add(newColumn);
                 }
                 reader.Dispose();
             }
@@ -461,10 +458,7 @@ namespace Provident.Foundations.SqlServer.Schema
                         TypeId = record.TypeId,
                         IsAnsiPadded = record.IsPadded
                     };
-                    if (table.Columns != null)
-                    {
-                        table.Columns.Add(newColumn);
-                    }
+                    table.Columns?.Add(newColumn);
                 }
                 reader.Dispose();
             }

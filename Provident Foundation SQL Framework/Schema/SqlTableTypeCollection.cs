@@ -1,4 +1,4 @@
-﻿namespace Provident.Foundations.SqlServer.Schema
+﻿namespace Provident.Foundations.Sql.Schema
 {
     /// <summary>
     /// Contains a list of <see cref="SqlTableType"/> instances.

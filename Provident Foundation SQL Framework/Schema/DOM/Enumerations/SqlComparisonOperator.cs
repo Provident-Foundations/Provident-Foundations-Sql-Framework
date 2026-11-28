@@ -1,4 +1,4 @@
-﻿namespace Provident.Foundation.Sql.Schema.DOM.Enumerations
+﻿namespace Provident.Foundations.Sql.Schema.DOM.Enumerations
 {
     /// <summary>
     /// Lists the SQL comparison operators that may be rendered.

@@ -1,5 +1,4 @@
-﻿using Provident.Foundation.Sql.Schema.DOM.Expressions;
-using Provident.Foundations.Abstractions;
+﻿using Provident.Foundations.Abstractions;
 using Provident.Foundations.Constants;
 using Provident.Foundations.Sql.Schema.DOM.Clauses;
 using Provident.Foundations.Sql.Schema.DOM.Expressions;

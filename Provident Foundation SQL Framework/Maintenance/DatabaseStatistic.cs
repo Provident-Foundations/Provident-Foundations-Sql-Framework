@@ -1,6 +1,6 @@
 ﻿using Provident.Foundations.Abstractions;
 
-namespace Provident.Foundations.SqlServer.Maintenance;
+namespace Provident.Foundations.Sql.Maintenance;
 
 /// <summary>
 /// Provides a basic SQL Server database information container used in maintenance operations
@@ -100,10 +100,7 @@ public sealed class DatabaseStatistic : DisposableObjectBase
     public void AddIndexToTable(int tableId, IndexStatisticsInfo newIndex)
     {
         TableStatistic? table = _tables?.GetByObjectId(tableId);
-        if (table != null)
-        {
-            table.AddIndex(newIndex);
-        }
+        table?.AddIndex(newIndex);
     }
     /// <summary>
     /// Gets the list of names of the table that need index rebuilding.
