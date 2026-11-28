@@ -31,12 +31,20 @@
     <RepositoryUrl>https://github.com/Provident-Foundations/Provident-Foundations-Sql-Framework</RepositoryUrl>
     <Platforms>AnyCPU;x64</Platforms>
     <PlatformTarget>x64</PlatformTarget>
-    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Company>Provident Foundations</Company>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="License.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="ProvidentFoundations.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="License.txt" />
   </ItemGroup>
 
   <ItemGroup>
@@ -63,6 +71,21 @@
 
   <ItemGroup>
     <Folder Include="Schema\Enumerations\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\Core\Provident-Foundations-Framework\License.txt">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\..\..\Core\Provident-Foundations-Framework\Nuget Package Logo For Applications.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

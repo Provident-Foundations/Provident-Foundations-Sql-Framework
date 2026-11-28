@@ -2,31 +2,54 @@
 
 # Provident Foundations SQL Server Framework
 
-A .NET library for SQL Server application development, providing data-access foundations, schema models and SQL generation alongside database maintenance helpers. It builds on the core Provident Foundations library.
+A .NET library of SQL Server data-access, schema, SQL-generation, and database-maintenance components. It builds on the `Provident.Foundations` core library and uses Microsoft.Data.SqlClient.
 
-## What's included
+## Requirements
 
-- Data-access base classes and SQL Server provider helpers.
-- Schema and metadata models, a SQL DOM and writers for building SQL statements.
-- Database maintenance and statistics types.
-- SQL Maker project persistence, table discovery and generation of selected artifacts, described below.
+- .NET 11 (`net11.0`)
+- SQL Server and a connection string for operations that access a database
+- A compatible x64 runtime; the project sets `PlatformTarget` to `x64`
 
-## Requirements and use
+The library references Microsoft.Data.SqlClient, SQL Server DacFx, SQL Server Management Objects, and `Provident.Foundations`.
 
-The project targets **.NET 11** (`net11.0`) and references the core framework, Microsoft.Data.SqlClient, DacFx and SQL Server Management Objects. Reference the SQL framework project or `Provident.Foundations.SqlServer` package from a compatible application. Operations that connect to SQL Server require an accessible server and appropriate credentials and permissions.
+## Install
 
-## SQL Maker projects
+```sh
+dotnet add package Provident.Foundations.SqlServer
+```
 
-The framework includes the SQL Maker project model and `.adbx` reader and writer in the `Adaptive.SqlMaker` namespace. The namespace is retained for compatibility with the archived SQL Maker application. Projects store connection information, project options, table profiles, and stored procedures. Existing files produced by the older writer with tables directly under the project root can also be loaded.
+## What the library provides
 
-The Visual Studio Toolset provides **SQL > New SQL Maker Project** to enter project options, load and select SQL Server tables, and save a project. **Connect...** opens a guided SQL Server connection dialog with Windows integrated or SQL Server authentication, optional database browsing, connection testing, and advanced options. Connect verifies the connection; the dialog does not retain an open connection. Encryption and certificate validation are enabled by default; trusting a server certificate bypasses certificate validation and should be used only for a trusted server. The optional raw connection-string field overrides the guided connection and is not verified until used. SQL Maker requires a database to load tables or save a project. Passwords entered in the toolset are removed before the connection string is saved; SQL authentication passwords must be supplied again for future connections. The project model itself writes the connection strings supplied by callers verbatim: callers must remove credentials before saving if those credentials should not be stored in the project file.
+- **SQL provider and data access** (`Provident.Foundations.Sql.Provider`): create a `SqlDataProvider` from a connection string and execute SQL, stored procedures, commands, batches, and transactions with synchronous and asynchronous APIs.
+- **Schema models** (`Provident.Foundations.Sql.Schema`): represent servers, databases, tables, columns, keys, indexes, and related SQL metadata; load schema information through the SQL provider.
+- **SQL DOM and writers** (`Provident.Foundations.Sql.Schema.DOM`): compose SQL statements and expressions and render them as T-SQL.
+- **Maintenance and statistics** (`Provident.Foundations.Sql.Maintenance`): database and index statistics plus SQL Server maintenance operations.
+- **SQL Maker project support**: read and write `.adbx` project files, discover database tables, and generate selected entity and stored-procedure source.
 
-The archived SQL Maker exposed project/profile options but did not ship a code-generation implementation. The new `SqlMakerCodeGenerator` provides explicit, in-memory generation from a supplied SQL table schema and table profile. `GenerateEntityClass` emits a nullable-enabled C# entity using the configured entity namespace, standard imports, region option, and data definition class name. `GenerateStoredProcedures` emits configured Get All, Get By ID, Insert, Update, and Delete procedure scripts, applying project/profile procedure name prefixes and suffixes, the configured ID field, and soft-delete settings. Only procedures named in the table profile are emitted; callers decide where to write returned source. Both methods require a matching profile table name; profile-qualified schema names are checked against the supplied table schema. Procedure scripts use that schema and `CREATE OR ALTER PROCEDURE`.
+## Discover tables
 
-Generation deliberately does not create data-access classes, relationship/join members or queries, user-custom procedure bodies, or files on disk. Requested joins raise `NotSupportedException` unless the table profile explicitly opts out with `NoSubJoins`; missing key/soft-delete configuration, invalid names, and unsupported SQL types are reported as errors instead of being silently skipped. Entity generation requires `DataDefinitionClassName` and rejects a generated property colliding with the class identifier. Key-based procedures require an explicit profile or project ID field plus metadata proving the field is the sole key column of a single-column primary key or unique constraint; otherwise generation refuses potentially multirow reads, updates, or deletes. The methods use only the options named above: `DataAccessNamespace`, data-access class names/paths, entity output paths, and other profile settings such as friendly/singular/plural names, description, join naming, and standard/key/subjoin field lists are not interpreted. Built-in SQL type support is explicit; user-defined and unsupported types are rejected. Fixed CHAR/NCHAR/BINARY parameters reject MAX, and Unicode parameter lengths must be even byte counts within SQL Server's 4,000-character limit.
+`SqlMakerTableDiscovery` queries the user tables visible in the database specified by the connection string and returns them ordered by schema and name:
 
-Tables with the same name can be included when they belong to different schemas. Use `Tables[qualifier, name]` for an exact match; an unqualified lookup or removal throws when multiple tables share that name.
+```csharp
+using Provident.Foundations.Sql.SqlMaker;
 
-## SELECT statements
+var tables = await SqlMakerTableDiscovery.GetTablesAsync(connectionString, cancellationToken);
+foreach (var table in tables)
+{
+    Console.WriteLine($"{table.Schema}.{table.Name}");
+}
+```
 
-Add SQL expressions to `SqlCodeSelectStatement.GroupByExpressions` and `SqlCodeOrderByItem` instances to `OrderByItems` to render optional GROUP BY and ORDER BY clauses. Both synchronous and asynchronous `SqlWriter` methods support these clauses; empty collections omit them.
+The account in the connection string must be able to connect to the target database and read its table metadata.
+
+## SQL Maker projects and generation
+
+The SQL Maker project model (`Provident.Foundations.SqlMaker`) stores project options, data sources, table profiles, and stored-procedure definitions in `.adbx` XML files. `SqlDataProject.Load()` and `Save()` read and write its configured `FileName`. The model writes connection strings supplied by callers as-is; do not save credentials in a project file unless that is intentional.
+
+The generator and discovery APIs are in `Provident.Foundations.Sql.SqlMaker`. Given project options, a table profile, and a loaded `SqlTable` schema, `SqlMakerCodeGenerator.GenerateEntityClass(...)` returns nullable-enabled C# source, and `GenerateStoredProcedures(...)` returns the configured T-SQL procedures as `SqlMakerGeneratedProcedure` values (`Name` and `Source`). These methods return source in memory; they do not create files, data-access classes, relationship/join code, or custom procedure bodies. Only configured procedure names are generated. Unsupported SQL types, invalid configuration, or insufficient key metadata result in exceptions rather than silently producing incomplete output. Key-based procedures require schema metadata confirming a single-column primary key or unique constraint.
+
+The SQL Maker project model uses the `Provident.Foundations.SqlMaker` namespace for compatibility; the generator and table-discovery types use `Provident.Foundations.Sql.SqlMaker`.
+
+## SQL statement generation
+
+For a `SqlCodeSelectStatement`, add expressions to `GroupByExpressions` and `SqlCodeOrderByItem` values to `OrderByItems` to include optional `GROUP BY` and `ORDER BY` clauses. The SQL writer supports both synchronous and asynchronous output; empty collections omit their clauses.
